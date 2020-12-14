@@ -9,10 +9,15 @@ const scoreSchema = require('./src/db/schemas/scoreSchema');
 
 async function main() {
 
+    // const app = Hapi.Server({
+    //     host: process.env.HOST || 'localhost',
+    //     port: process.env.PORT || 3000,
+    //     routes: { cors: true }
+    // });
+
     const app = Hapi.Server({
-        host: process.env.HOST || 'localhost',
-        port: process.env.PORT || 3000,
-        routes: { cors: true }
+        port: process.env.PORT
+        
     });
 
     try {     
