@@ -1,0 +1,26 @@
+{
+  "name": "quiz-app-js-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "end.js",
+  "scripts": {
+    "test": "mocha -w tests/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "hapi": "^18.1.0",
+    "joi": "^17.3.0",
+    "jquery": "^3.5.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "popper.js": "^1.16.1",
+    "sass": "^1.30.0",
+    "sequelize": "^6.3.5"
+  }
+}
