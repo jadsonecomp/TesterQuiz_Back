@@ -4,6 +4,7 @@
   "description": "",
   "main": "end.js",
   "scripts": {
+    "start": "node api.js",
     "test": "mocha -w tests/*.test.js"
   },
   "keywords": [],
