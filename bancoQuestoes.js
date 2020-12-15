@@ -1,4 +1,4 @@
-const questoes = [
+const Questoes = [
 
     {
         "question": "No teste de software orientado a objetos, como a condição de um objeto é parte implícita da entrada e saída dos métodos, necessita-se de uma maneira para explorar sistematicamente as situações e transições do objeto. O modelo de teste adequado para executar essas operações é o teste",
@@ -283,3 +283,5 @@ const questoes = [
 
 
 ]
+
+module.exports = Questoes;

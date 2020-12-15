@@ -17,6 +17,36 @@ const jogadorSchema = require('./src/db/schemas/jogadorSchema');
 const perguntaSchema = require('./src/db/schemas/perguntaSchema');
 const scoreSchema = require('./src/db/schemas/scoreSchema');
 
+const fetch = require('node-fetch');
+
+
+
+const QUESTOES = require('./bancoQuestoes');
+const URL_QUESTOES = 'https://testerquizback.herokuapp.com/perguntas';
+function setScore(){
+    try {    
+        return fetch(URL_QUESTOES, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(QUESTOES)
+        }).then(response => {
+            return response.json();
+            })  
+        .then(json => {
+                return json;  
+            })    
+        .catch(err => console.log('Request Failed', err)); 
+    } catch (error) {
+        console.log(error); 
+    }
+}
+
+
+
+
 
 
 async function main() {
@@ -241,6 +271,10 @@ async function main() {
 
     await app.start()
     console.log('server running at', app.info.port)
+
+    setTimeout(async () => {
+       const perguntasReturn = await setScore()    
+    }, 10000);
 
 }
 
