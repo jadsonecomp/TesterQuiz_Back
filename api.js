@@ -30,7 +30,7 @@ async function main() {
     const app = Hapi.Server({
         // host: process.env.HOST,
         // port: process.env.PORT,
-        // routes: { cors: true }
+        routes: { cors: true },
         port: process.env.PORT
         
     });
@@ -227,7 +227,6 @@ async function main() {
 
     await app.start()
     console.log('server running at', app.info.port)
-    console.log('process.env.HOST: ', process.env.HOST)
 
 }
 
