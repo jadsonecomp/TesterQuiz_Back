@@ -5,6 +5,7 @@
   "main": "end.js",
   "scripts": {
     "start": "node api.js",
+    "prod": "cross-env NODE_ENV=prod api.js",
     "test": "mocha -w tests/*.test.js"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "hapi": "^18.1.0",
     "joi": "^17.3.0",
