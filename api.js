@@ -131,6 +131,20 @@ async function main() {
                 }
             },
             {
+                method: 'POST',
+                path: '/perguntas',
+                handler: async (request, h) => {
+                    const payload = request.payload;
+                    try {
+                        const perguntaCad = await perguntaSchema.bulkCreate(payload);
+                        return perguntaCad;    
+                    } catch (error) {
+                        return error;    
+                    }
+                    
+                }
+            },
+            {
                 method: 'GET',
                 path: '/jogador',
                 handler: async (request, h) => {
