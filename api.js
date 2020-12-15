@@ -121,7 +121,9 @@ async function main() {
                 handler: async (request, h) => {
 
                     const {id} = request.query
-
+                    console.log('Cheguei aqui: ', request)
+                    console.log('process.env.HOST: ', process.env.HOST)
+                    
                     if (!isNaN(id)) {
                         return await jogadorSchema.findAll({
                             where: {
@@ -210,6 +212,7 @@ async function main() {
 
     await app.start()
     console.log('server running at', app.info.port)
+    console.log('process.env.HOST: ', process.env.HOST)
 
 }
 
