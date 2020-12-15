@@ -19,24 +19,19 @@ const Sequelize = require('sequelize');
 //     },
 //   );
 
-// 
-
 const sequelize  = new Sequelize(
-    'd4oqb6u63s1f2l', //database
-    'edydesyhjetqrx', // user
-    'acd81ddca3b9de6d573ae33afa66638aebe3550503970434fdea87fecca822a4', //senha
-    {
-      host: 'ec2-52-201-184-16.compute-1.amazonaws.com:5432',
-      dialect: 'postgres',
-      // case sensitive
+        "postgres://edydesyhjetqrx:acd81ddca3b9de6d573ae33afa66638aebe3550503970434fdea87fecca822a4@ec2-52-201-184-16.compute-1.amazonaws.com:5432/d4oqb6u63s1f2l",
+    {      
       quoteIdentifiers: false,
-      // deprecation warning
+      
       operatorsAliases: false,
-      //disable logging
-      logging: false
-      // dialectOptions: {
-      //   ssl: true,
-    },
+      
+      logging: false,
+      ssl: true,
+      dialectOptions: {
+         ssl: true
+        }
+    }
   );
 
 

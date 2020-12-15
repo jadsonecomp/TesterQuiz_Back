@@ -16,7 +16,9 @@ async function main() {
     // });
 
     const app = Hapi.Server({
-        port: process.env.PORT
+        host: process.env.HOST,
+        port: process.env.PORT,
+        routes: { cors: true }
         
     });
 
