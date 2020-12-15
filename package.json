@@ -5,7 +5,7 @@
   "main": "end.js",
   "scripts": {
     "start": "node api.js",
-    "prod": "cross-env NODE_ENV=prod api.js",
+    "prod": "cross-env NODE_ENV=prod node api.js",
     "test": "mocha -w tests/*.test.js"
   },
   "keywords": [],

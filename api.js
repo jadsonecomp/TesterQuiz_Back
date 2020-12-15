@@ -3,6 +3,8 @@ const { config } = require('dotenv')
 
 const configPath = join('./config', `.env.prod`)
 
+console.log('configPath: ', configPath)
+
 config({
     path: configPath
 })

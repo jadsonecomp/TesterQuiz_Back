@@ -27,9 +27,13 @@ const sequelize  = new Sequelize(
       operatorsAliases: false,
       
       logging: false,
-      ssl: process.env.SSL_DB,
+
+      //ssl: process.env.SSL_DB,
       dialectOptions: {
-         ssl: process.env.SSL_DB
+          ssl: {
+            require: true,
+            rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+          }
         }
     }
   );
