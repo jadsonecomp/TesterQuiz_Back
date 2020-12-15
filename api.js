@@ -1,3 +1,13 @@
+const { join } = require('path')
+const { config } = require('dotenv')
+
+const configPath = join('./config', `.env.prod`)
+
+config({
+    path: configPath
+})
+
+
 const Hapi = require('hapi')
 const Joi = require('joi')
 const database = require('./src/db/db');
@@ -16,9 +26,10 @@ async function main() {
     // });
 
     const app = Hapi.Server({
-        host: process.env.HOST,
-        port: process.env.PORT,
-        routes: { cors: true }
+        // host: process.env.HOST,
+        // port: process.env.PORT,
+        // routes: { cors: true }
+        port: process.env.PORT
         
     });
 

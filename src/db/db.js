@@ -20,16 +20,16 @@ const Sequelize = require('sequelize');
 //   );
 
 const sequelize  = new Sequelize(
-        "postgres://edydesyhjetqrx:acd81ddca3b9de6d573ae33afa66638aebe3550503970434fdea87fecca822a4@ec2-52-201-184-16.compute-1.amazonaws.com:5432/d4oqb6u63s1f2l",
+    process.env.POSTGRES_URL,
     {      
       quoteIdentifiers: false,
       
       operatorsAliases: false,
       
       logging: false,
-      ssl: true,
+      ssl: process.env.SSL_DB,
       dialectOptions: {
-         ssl: true
+         ssl: process.env.SSL_DB
         }
     }
   );
